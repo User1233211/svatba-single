@@ -1,0 +1,88 @@
+$xs: 0;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+
+$gold: #bda654;
+$main: #544e39;
+
+html {
+	font-size: 10px;
+	
+}
+body {
+	font-size: 1.6rem;
+	color: $main;
+	font-weight: 400;
+	//font-family: 'Josefin Sans', sans-serif;
+	font-family: 'Playfair Display', serif;
+	
+}
+
+section, textarea {
+	overflow: hidden;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+p, li {
+	margin: 0;
+	font-size: 2.3rem;
+}
+i {
+	font-size: 2rem;
+}
+
+h1 {
+	font-size: 9em;
+	color: $gold;
+	font-weight: 400;
+	font-family: 'Playfair Display SC', serif;
+}
+
+h2 {
+	font-size: 7rem;
+	line-height: 1;
+	margin-bottom: 25px;
+	font-family: 'Playfair Display SC', serif;
+	text-transform: lowercase;
+	font-weight: 400;
+	color: $gold;
+	
+}
+
+iframe {
+	display: block;
+}
+
+img {
+	display: inline-block;
+	max-width: 100%;
+}
+
+@media screen and (max-width: $md) {
+	html {
+		font-size: 8px;
+	}
+	h1 {
+		//font-size: 5rem;
+		width: min-content;
+	}
+}
+@media screen and (min-width: $xl) {
+
+	.container {
+		max-width: 1500px;
+	}
+
+}
+
+
+@import './components';
+@import './form';

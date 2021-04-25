@@ -1,0 +1,119 @@
+.form {
+	max-width: 400px;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 1rem;
+	display: flex;
+	flex-direction: column;
+	input, textarea {
+		border: none;
+		outline: none;
+		border-bottom: 1px solid #000;
+		font-size: 1.8rem;
+		padding-top: 5px;
+
+		--webkit-appearance: none;
+		border-radius: 0;
+
+		font-weight: 300;
+		color: $main;
+	}
+	button {
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 20px;
+		background: $gold;
+		color: #fff;
+		border: none;
+		padding: 5px 20px;
+		user-select: none;
+		line-height: 1.6;
+		font-size: 16px;
+		
+	}
+	&__element {
+		display: flex;
+		flex-direction: column;
+		padding-bottom: 15px;
+		//font-size: 10px;
+		span, label {
+			font-size: 2.2rem;
+			margin-right: 2rem;
+		}
+		&--row {
+			flex-direction: row;
+			align-items: center;
+		}
+	}
+	@media screen and (max-width: $md) {
+		.form {
+			input, textarea {
+				font-size: 2rem;
+			}
+			&__element {
+				font-size: 9px;
+			}
+		}
+	}
+}
+
+#slide-element {
+	display: none;
+	.form__element span {
+		font-size: 2rem;
+	}
+}
+
+#slide-control {
+	&.active {
+		input {
+			&~.checkmark {
+				&::before {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
+
+.checkbox {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	margin-bottom: 0;
+	input {
+		display: none;
+		&:checked {
+			&~.checkmark {
+				&::before {
+					opacity: 1;
+				}
+			}
+		}
+	}
+	&__text {
+
+	}
+	.checkmark {
+		position: relative;
+		display: block;
+		width: 22px;
+		height: 22px;
+		border-radius: 5px;
+		border: 1px solid $gold;
+		&:before {
+			content: "";
+			opacity: 0;
+			position: absolute;
+			left: 8px;
+			top: 4px;
+			width: 5px;
+			height: 10px;
+			border: solid $gold;
+			border-width: 0 2px 2px 0;
+			transform: rotate(45deg);
+			transition: all .15s ease-in-out;
+		}
+	}
+}
